@@ -48,7 +48,7 @@ def remove_background(img, alpha = 1.5, beta = 0, white = True, resize = False):
         
             # From among them, find the contours with large surface area.
         significant = []
-        tooSmall = edgeImg.size * 5/100 # If contour isn't covering 5% of total area of image then it probably is too small
+        tooSmall = edgeImg.size * 5/100 # If contour isn't covering n% of total area of image then it probably is too small, here n = 5
         for tupl in level1:
             contour = contours[tupl[0]];
             area = cv2.contourArea(contour)
