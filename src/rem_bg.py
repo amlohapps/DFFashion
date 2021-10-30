@@ -30,9 +30,9 @@ def remove_background(img, alpha = 1.5, beta = 0, white = True, resize = False):
     
     edgeImg = np.max( np.array([ edgedetect(blurred[:,:, 0]), edgedetect(blurred[:,:, 1]), edgedetect(blurred[:,:, 2]) ]), axis=0 )
     
-    mean = np.mean(edgeImg) * 1;
+    mean = np.mean(edgeImg) * 1
     # Zero any value that is less than mean. This reduces a lot of noise.
-    edgeImg[edgeImg <= mean] = 0;
+    edgeImg[edgeImg <= mean] = 0
     
     def findSignificantContours (img, edgeImg):
         contours, heirarchy = cv2.findContours(edgeImg, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -48,9 +48,9 @@ def remove_background(img, alpha = 1.5, beta = 0, white = True, resize = False):
         
             # From among them, find the contours with large surface area.
         significant = []
-        tooSmall = edgeImg.size * 5/100 # If contour isn't covering 5% of total area of image then it probably is too small
+        tooSmall = edgeImg.size * 5/100 # If contour isn't covering n% of total area of image then it probably is too small, here n = 5
         for tupl in level1:
-            contour = contours[tupl[0]];
+            contour = contours[tupl[0]]
             area = cv2.contourArea(contour)
             if area > tooSmall:
                 significant.append([contour, area])
