@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon May 24 17:50:06 2021
-
-@author: prajw
-"""
-
 from find_mask import masker, masker_np
 from utils import trim_masks, to_rle, display, convert_to_mask, crop_by_id, rgb_to_hsv, convert_color, tensor_to_image
 import numpy as np

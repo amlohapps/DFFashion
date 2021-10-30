@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue May 18 21:44:51 2021
-
-@author: prajw
-"""
-
 import json
 import glob
 

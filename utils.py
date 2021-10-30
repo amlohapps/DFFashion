@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon May 24 18:10:09 2021
-
-@author: prajw
-"""
-
 import numpy as np
 import itertools
 import cv2
